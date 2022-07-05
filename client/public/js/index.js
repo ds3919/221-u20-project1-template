@@ -9,3 +9,5 @@ function checkKeyPress(e) {
     goToLocation('/feed');
   }
 }
+//253
+let el = document.getElementId("fade_text").addEventListener("keypress", checkKeyPress(e));
