@@ -6,7 +6,7 @@ function feedItem (title, body, linkUrl, imageUrl) {
 }
 
 const story1 = new feedItem('Shooting in Buffallo', "people killed", 'https://www.npr.org/2022/06/16/1105776617/buffalo-shooting-suspect-says-his-motive-was-to-prevent-eliminating-the-white-ra', '../images/buffalo shooting.jpg');
-const story2 = new feedItem('Florida man kills his wife for a donut', "Yes folks we are serious", "http://google.com", '../images/balloons.jpg');
+const story2 = new feedItem('Florida man kills his wife for a donut', "Yes folks we are serious", "https://youtu.be/dQw4w9WgXcQ", '../images/balloons.jpg');
 const story3 = new feedItem('Florida man eats donuts in a garbage with his alligator', "Yes folks we are serious", "http://google.com", '../images/shrek.png');
 
 const currentStories = [story1, story2, story3];
