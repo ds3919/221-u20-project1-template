@@ -19,3 +19,5 @@ function  displayItem() {
 }
 
 window.addEventListener('load', displayItem);
+
+document.getElementById('portal_button').addEventListener("click", () => {window.location = 'https://www.marist.edu/';});
