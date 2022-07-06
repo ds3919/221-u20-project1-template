@@ -57,3 +57,7 @@ a {
 	max-width: 150px;
 	max-height: 150px;
 }
+
+hr {
+	border-top: 3px solid #bbb;
+}

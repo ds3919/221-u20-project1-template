@@ -3,18 +3,19 @@ function feedItem (title, body, linkUrl, imageUrl) {
     this.body = body;
     this.linkUrl = linkUrl;
     this.imageUrl = imageUrl;
-  }
-  
-  let story1 = feedItem('Shooting in Buffallo', "people killed", 'https://www.npr.org/2022/06/16/1105776617/buffalo-shooting-suspect-says-his-motive-was-to-prevent-eliminating-the-white-ra', 'https://www.google.com/search?q=buffalo+shooting&rlz=1C1GCEA_enUS824US824&tbm=isch&source=iu&ictx=1&vet=1&fir=-fQnbBIGtAd5mM%252CKEed91-9LpXFmM%252C%252Fg%252F11szd9w4kt&usg=AI4_-kRIkBqdkEZsF9N5IJIdItcxT2AfSg&sa=X&ved=2ahUKEwjI5qLBs-T4AhV8EGIAHWaAARQQ_B16BAgrEAI#imgrc=-fQnbBIGtAd5mM');
-  let story2 = feedItem();
-  let story3 = feedItem();
-  
-  const currentStories = [story1, story2, story3];
+}
 
-  let newsfeed = document.getElementById('newsfeed').innerHTML;
+const story1 = new feedItem('Shooting in Buffallo', "people killed", 'https://www.npr.org/2022/06/16/1105776617/buffalo-shooting-suspect-says-his-motive-was-to-prevent-eliminating-the-white-ra', '../images/buffalo shooting.jpg');
+const story2 = new feedItem('Florida man kills his wife for a donut', "Yes folks we are serious", "http://google.com", '../images/balloons.jpg');
+const story3 = new feedItem('Florida man eats donuts in a garbage with his alligator', "Yes folks we are serious", "http://google.com", '../images/shrek.png');
 
-  function displayItem(item) {
-    newsfeed += item;
-  }
+const currentStories = [story1, story2, story3];
 
-  document.getElementById('newsfeed').onload(currentStories.map(displayItem));
+function  displayItem() {
+    for(var i = 0; i < currentStories.length; i++) {
+        let item = currentStories[i];
+        document.getElementById('newsfeed').innerHTML += "<img class='feedImage' src='" + item.imageUrl + "'>\n<p><a href='" + item.linkUrl + "'>" + item.title + "</a><br>" + item.body + "<br><hr></p><br>";
+    }
+}
+
+window.addEventListener('load', displayItem);
