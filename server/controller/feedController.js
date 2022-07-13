@@ -35,10 +35,8 @@ exports.deleteFeedItem = function(req, res) {
 }
 
 exports.updateFeedItem = function(req, res) {
-	// get the existing user from the array
 	var updatedFeedItem = feedItems[req.params.feedItemId];
 
-	// check to see what has been passed and update the local copy
 	console.log(req.body.title);
 	if(req.body.title)
 		updatedFeedItem.title = req.body.title;
@@ -49,7 +47,6 @@ exports.updateFeedItem = function(req, res) {
 	if(req.body.imageUrl)
 		updatedFeedItem.imageUrl = req.body.imageUrl;
 
-	// save the local copy of the user back into the array
 	feedItems[req.params.feedItemId] = updatedFeedItem;
 
 	res.setHeader('Content-Type', 'application/json');
