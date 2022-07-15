@@ -24,5 +24,11 @@
     </footer>
     <script src = "/js/feed.js"></script>
     <script src = "/js/global.js"></script>
+    <script type="text/javascript">
+      let delButton = function(){
+        fetch('/api/feedItems/'+this.id, {method:"DELETE"});
+        window.location.reload();
+      }
+    </script>
   </body>
 </html>

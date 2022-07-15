@@ -25,11 +25,13 @@ exports.saveFeedItem = (req, res) => {
 
 exports.getFeedItem = function(req, res) {
 	res.setHeader('Content-Type', 'application/json');
-  res.send(feedItems[req.params.feedItemId]);
+  	res.send(feedItems[req.params.feedItemId]);
 }
 
 exports.deleteFeedItem = function(req, res) {
+	console.log('deleting item');
 	feedItems.splice(req.params.feedItemId, 1);
+	console.log('deleted item');
 	res.setHeader('Content-Type', 'application/json');
 	res.send(feedItems);
 }
