@@ -53,4 +53,4 @@ app.route('/api/players/:playerId')
     .put(playerController.updateplayer);
 
 //listens for if port 1337 is active then it prints
-app.listen(5000, () => console.log('Listening on port 1337.'))
+app.listen(5000, () => console.log('Listening on port 5000.'))
