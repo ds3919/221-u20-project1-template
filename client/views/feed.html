@@ -1,10 +1,10 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
   <head>
     <title>FoxChatter Newsfeed</title>
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/feed.css">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/feed.css" />
   </head>
   <body>
     <header>
@@ -12,7 +12,7 @@
       FoxChatter
       <!--MyMarist Portal-->
       <div id="portal_button">
-        <img id="redfox" src="images/redfox.png" alt="Red Fox Image">
+        <img id="redfox" src="images/redfox.png" alt="Red Fox Image" />
         myMarist
       </div>
     </header>
@@ -22,13 +22,29 @@
     <footer>
       <p id="site_info">Copyright &copy; 2020: Marist College est. 1929</p>
     </footer>
-    <script src = "/js/feed.js"></script>
-    <script src = "/js/global.js"></script>
+    <script src="/js/feed.js"></script>
+    <script src="/js/global.js"></script>
     <script type="text/javascript">
-      let delButton = function(){
-        fetch('/api/feedItems/'+this.id, {method:"DELETE"});
+      let delButton = function (i) {
+        //deletes button using the method DELETE
+        fetch("/api/feedItems/" + i, { method: "DELETE" });
+        //reloads the tab/window
         window.location.reload();
-      }
+      };
+
+      let formButton = function () {
+        fetch("/api/feedItems", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            title: document.getElementById("title").value,
+            body: document.getElementById("body").value,
+            imageUrl: document.getElementById("imageUrl").value,
+            linkUrl: document.getElementById("linkUrl").value,
+          }),
+        });
+        window.location.reload();
+      };
     </script>
   </body>
 </html>
